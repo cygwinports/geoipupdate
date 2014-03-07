@@ -1,0 +1,17 @@
+NAME="geoipupdate"
+VERSION=2.0.0
+RELEASE=1
+CATEGORY="Net"
+SUMMARY="GeoIP database updater (requires subscription)"
+DESCRIPTION="GeoIP is a C library that enables the user to find geographical
+and network information of an IP address."
+HOMEPAGE="http://dev.maxmind.com/geoip/geoipupdate/"
+SRC_URI="https://github.com/maxmind/geoipupdate/releases/download/v${VERSION}/geoipupdate-${VERSION}.tar.gz"
+
+src_install() {
+	cd ${B}
+	cyginstall
+
+	rm -f ${D}/etc/GeoIP.conf.default
+	make_etc_defaults /etc/GeoIP.conf
+}
