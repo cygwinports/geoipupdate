@@ -1,12 +1,13 @@
 NAME="geoipupdate"
-VERSION=2.0.0
+VERSION=2.2.2
 RELEASE=1
 CATEGORY="Net"
-SUMMARY="GeoIP database updater (requires subscription)"
-DESCRIPTION="GeoIP is a C library that enables the user to find geographical
-and network information of an IP address."
+SUMMARY="GeoIP database updater"
+DESCRIPTION="The GeoIP Update program performs automatic updates of GeoIP2 and
+GeoIP Legacy binary databases. CSV databases are not supported."
 HOMEPAGE="http://dev.maxmind.com/geoip/geoipupdate/"
 SRC_URI="https://github.com/maxmind/geoipupdate/releases/download/v${VERSION}/geoipupdate-${VERSION}.tar.gz"
+PATCH_URI="2.2.2-conf-free.patch"
 
 src_install() {
 	cd ${B}
